@@ -1,2 +1,0 @@
-# SNiCLandingPage
-Created with CodeSandbox
