@@ -131,6 +131,7 @@ button {
   margin-top: 10px;
   color: black;
   font-weight: bold;
+  font-size: 3rem;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -142,11 +143,12 @@ button {
 }
 
 .subtitle {
-  font-size: 0.8em;
+  font-size: 1.5rem;
+  font-weight: regular;
 }
 
 .thumbnail {
-  width: 25vw;
+  width: 500px;
   height: auto;
   margin: auto; 
   border-radius: 2px;
@@ -173,6 +175,10 @@ button {
 
   .contact {
     width: 80vw;
+  }
+
+  .thumbnail {
+    width: 400px;
   }
 }
 /* Large screens ----------- */
