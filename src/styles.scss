@@ -1,4 +1,5 @@
 $primary-color: #d64e4e;
+$secondary-color: #00ca33;
 
 body {
   font-family: "Raleway", sans-serif;
@@ -62,7 +63,7 @@ button {
   right: 0;
   top: 0;
   padding: 1rem;
-  background: #00ca33;
+  background: $secondary-color;
   color: white;
   font-size: 2.5vw;
   border-radius: 12px;
@@ -161,6 +162,37 @@ button {
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.3), 0 10px 24px 0 rgba(0, 0, 0, 0.23);
 }
 
+.footer {
+  background-color: #333333;
+}
+
+.footer__links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 1.5rem;
+  color: white;
+}
+
+.footer__link {
+  margin: 0 5rem;
+}
+
+.footer__icon {
+  color: $primary-color;
+  font-size: 5rem;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.footer__icon:hover {
+  color: white;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 70rem) {
   p {
@@ -185,7 +217,7 @@ button {
     flex-direction: row;
   }
 
-  previous__snics {
+  .previous__snics {
     font-size: 1.5vw;
   }
 }
