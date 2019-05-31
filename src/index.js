@@ -1,7 +1,8 @@
 import "./styles.scss";
-import "particles.js";
+import "./particles.js";
 
 particlesJS("particles-js", {
+  fps_limit: 30,
   particles: {
     number: { value: 80, density: { enable: true, value_area: 800 } },
     color: { value: "#ca373e" },
@@ -42,13 +43,21 @@ particlesJS("particles-js", {
   interactivity: {
     detect_on: "canvas",
     events: {
-      onhover: { enable: true, mode: "repulse" },
+      onhover: { enable: true, mode: "bubble" },
+      onclick: { enable: false, mode: "repulse" },
       resize: true
     },
     modes: {
       grab: { distance: 400, line_linked: { opacity: 1 } },
-      bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
-      repulse: { distance: 200, duration: 0.4 },
+      bubble: {
+        distance: 350,
+        size: 15,
+        duration: 2,
+        opacity: 0.1,
+        speed: 1,
+        color: "#ffffff"
+      },
+      repulse: { distance: 150, duration: 0.4 },
       remove: { particles_nb: 2 }
     }
   },
