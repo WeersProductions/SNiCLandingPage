@@ -61,7 +61,7 @@ particlesJS("particles-js", {
       remove: { particles_nb: 2 }
     }
   },
-  retina_detect: true
+  retina_detect: false
 });
 
 document.getElementById("app").innerHTML = `
