@@ -1097,6 +1097,8 @@ var pJS = function(tag_id, params) {
     /* events target element */
     if (pJS.interactivity.detect_on == "window") {
       pJS.interactivity.el = window;
+    } else if (pJS.interactivity.detect_on == "parent") {
+      pJS.interactivity.el = pJS.canvas.el.parentNode;
     } else {
       pJS.interactivity.el = pJS.canvas.el;
     }
