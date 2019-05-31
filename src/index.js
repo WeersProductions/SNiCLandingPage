@@ -2,6 +2,7 @@ import "./styles.scss";
 import "./particles.js";
 
 particlesJS("particles-js", {
+  fps_limit: 30,
   particles: {
     number: { value: 80, density: { enable: true, value_area: 800 } },
     color: { value: "#ca373e" },
