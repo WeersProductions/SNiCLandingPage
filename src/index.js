@@ -146,3 +146,19 @@ document.getElementById("app").innerHTML = `
   </div>
 </div>
 `;
+
+function scrollDown() {
+  var windowCoords = document.documentElement.clientHeight;
+  (function scroll() {
+    if (window.pageYOffset < windowCoords) {
+      window.scrollBy(0, 10);
+      setTimeout(scroll, 0);
+    }
+    if (window.pageYOffset > windowCoords) {
+      window.scrollTo(0, windowCoords);
+    }
+  })();
+}
+
+// document.getElementById("main_scroll").onclick = scrollDown
+document.getElementById("main_scroll").addEventListener("click", scrollDown);
