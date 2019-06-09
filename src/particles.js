@@ -90,7 +90,7 @@ var pJS = function(tag_id, params) {
       array: []
     },
     interactivity: {
-      detect_on: "canvas",
+      detect_on: "parent",
       events: {
         onhover: {
           enable: true,
@@ -263,7 +263,7 @@ var pJS = function(tag_id, params) {
 
     /* color */
     this.color = {};
-    if (typeof color.value == "object") {
+    if (typeof color.value === "object") {
       if (color.value instanceof Array) {
         var color_selected =
           color.value[
@@ -272,9 +272,9 @@ var pJS = function(tag_id, params) {
         this.color.rgb = hexToRgb(color_selected);
       } else {
         if (
-          color.value.r != undefined &&
-          color.value.g != undefined &&
-          color.value.b != undefined
+          color.value.r !== undefined &&
+          color.value.g !== undefined &&
+          color.value.b !== undefined
         ) {
           this.color.rgb = {
             r: color.value.r,
@@ -283,9 +283,9 @@ var pJS = function(tag_id, params) {
           };
         }
         if (
-          color.value.h != undefined &&
-          color.value.s != undefined &&
-          color.value.l != undefined
+          color.value.h !== undefined &&
+          color.value.s !== undefined &&
+          color.value.l !== undefined
         ) {
           this.color.hsl = {
             h: color.value.h,
@@ -294,13 +294,13 @@ var pJS = function(tag_id, params) {
           };
         }
       }
-    } else if (color.value == "random") {
+    } else if (color.value === "random") {
       this.color.rgb = {
         r: Math.floor(Math.random() * (255 - 0 + 1)) + 0,
         g: Math.floor(Math.random() * (255 - 0 + 1)) + 0,
         b: Math.floor(Math.random() * (255 - 0 + 1)) + 0
       };
-    } else if (typeof color.value == "string") {
+    } else if (typeof color.value === "string") {
       this.color = color;
       this.color.rgb = hexToRgb(this.color.value);
     }
@@ -371,7 +371,7 @@ var pJS = function(tag_id, params) {
     /* if shape is image */
 
     var shape_type = pJS.particles.shape.type;
-    if (typeof shape_type == "object") {
+    if (typeof shape_type === "object") {
       if (shape_type instanceof Array) {
         var shape_selected =
           shape_type[Math.floor(Math.random() * shape_type.length)];
@@ -381,7 +381,7 @@ var pJS = function(tag_id, params) {
       this.shape = shape_type;
     }
 
-    if (this.shape == "image") {
+    if (this.shape === "image") {
       var sh = pJS.particles.shape;
       this.img = {
         src: sh.image.src,
@@ -400,13 +400,13 @@ var pJS = function(tag_id, params) {
   pJS.fn.particle.prototype.draw = function() {
     var p = this;
 
-    if (p.radius_bubble != undefined) {
+    if (p.radius_bubble !== undefined) {
       var radius = p.radius_bubble;
     } else {
       var radius = p.radius;
     }
 
-    if (p.opacity_bubble != undefined) {
+    if (p.opacity_bubble !== undefined) {
       var opacity = p.opacity_bubble;
     } else {
       var opacity = p.opacity;
@@ -502,6 +502,8 @@ var pJS = function(tag_id, params) {
           draw();
         }
 
+        break;
+      default:
         break;
     }
 
@@ -610,6 +612,8 @@ var pJS = function(tag_id, params) {
           else if (p.x - p.radius < 0) p.vx = -p.vx;
           if (p.y + p.radius > pJS.canvas.h) p.vy = -p.vy;
           else if (p.y - p.radius < 0) p.vy = -p.vy;
+          break;
+        default:
           break;
       }
 
@@ -803,7 +807,6 @@ var pJS = function(tag_id, params) {
         dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
         dist_mouse = Math.sqrt(dx_mouse * dx_mouse + dy_mouse * dy_mouse),
         ratio = 1 - dist_mouse / pJS.interactivity.modes.bubble.distance;
-
       function init() {
         p.opacity_bubble = p.opacity;
         p.radius_bubble = p.radius;
@@ -811,9 +814,11 @@ var pJS = function(tag_id, params) {
 
       /* mousemove - check ratio */
       if (dist_mouse <= pJS.interactivity.modes.bubble.distance) {
-        if (ratio >= 0 && pJS.interactivity.status == "mousemove") {
+        if (ratio >= 0 && pJS.interactivity.status === "mousemove") {
           /* size */
-          if (pJS.interactivity.modes.bubble.size != pJS.particles.size.value) {
+          if (
+            pJS.interactivity.modes.bubble.size !== pJS.particles.size.value
+          ) {
             if (
               pJS.interactivity.modes.bubble.size > pJS.particles.size.value
             ) {
@@ -834,7 +839,7 @@ var pJS = function(tag_id, params) {
 
           /* opacity */
           if (
-            pJS.interactivity.modes.bubble.opacity !=
+            pJS.interactivity.modes.bubble.opacity !==
             pJS.particles.opacity.value
           ) {
             if (
@@ -868,7 +873,7 @@ var pJS = function(tag_id, params) {
       }
 
       /* mouseleave */
-      if (pJS.interactivity.status == "mouseleave") {
+      if (pJS.interactivity.status === "mouseleave") {
         init();
       }
     } else if (
@@ -951,7 +956,7 @@ var pJS = function(tag_id, params) {
     if (
       pJS.interactivity.events.onhover.enable &&
       isInArray("repulse", pJS.interactivity.events.onhover.mode) &&
-      pJS.interactivity.status == "mousemove"
+      pJS.interactivity.status === "mousemove"
     ) {
       var dx_mouse = p.x - pJS.interactivity.mouse.pos_x,
         dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
@@ -974,7 +979,7 @@ var pJS = function(tag_id, params) {
         y: p.y + normVec.y * repulseFactor
       };
 
-      if (pJS.particles.move.out_mode == "bounce") {
+      if (pJS.particles.move.out_mode === "bounce") {
         if (pos.x - p.radius > 0 && pos.x + p.radius < pJS.canvas.w)
           p.x = pos.x;
         if (pos.y - p.radius > 0 && pos.y + p.radius < pJS.canvas.h)
@@ -1011,7 +1016,7 @@ var pJS = function(tag_id, params) {
           p.vx = force * Math.cos(f);
           p.vy = force * Math.sin(f);
 
-          if (pJS.particles.move.out_mode == "bounce") {
+          if (pJS.particles.move.out_mode === "bounce") {
             var pos = {
               x: p.x + p.vx,
               y: p.y + p.vy
@@ -1048,7 +1053,7 @@ var pJS = function(tag_id, params) {
   pJS.fn.modes.grabParticle = function(p) {
     if (
       pJS.interactivity.events.onhover.enable &&
-      pJS.interactivity.status == "mousemove"
+      pJS.interactivity.status === "mousemove"
     ) {
       var dx_mouse = p.x - pJS.interactivity.mouse.pos_x,
         dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
@@ -1096,10 +1101,10 @@ var pJS = function(tag_id, params) {
 
   pJS.fn.vendors.eventsListeners = function() {
     /* events target element */
-    if (pJS.interactivity.detect_on == "window") {
+    if (pJS.interactivity.detect_on === "window") {
       pJS.interactivity.el = window;
-    } else if (pJS.interactivity.detect_on == "parent") {
-      pJS.interactivity.el = pJS.canvas.el.parentNode;
+    } else if (pJS.interactivity.detect_on === "parent") {
+      pJS.interactivity.el = pJS.canvas.el.parentNode.parentNode;
     } else {
       pJS.interactivity.el = pJS.canvas.el;
     }
@@ -1111,7 +1116,7 @@ var pJS = function(tag_id, params) {
     ) {
       /* el on mousemove */
       pJS.interactivity.el.addEventListener("mousemove", function(e) {
-        if (pJS.interactivity.el == window) {
+        if (pJS.interactivity.el !== window) {
           var pos_x = e.clientX - canvas_el.getBoundingClientRect().left,
             pos_y = e.clientY - canvas_el.getBoundingClientRect().top;
         } else {
@@ -1184,6 +1189,8 @@ var pJS = function(tag_id, params) {
               setTimeout(function() {
                 pJS.tmp.repulse_clicking = false;
               }, pJS.interactivity.modes.repulse.duration * 1000);
+              break;
+            default:
               break;
           }
         }
@@ -1350,8 +1357,8 @@ var pJS = function(tag_id, params) {
   pJS.fn.vendors.draw = function() {
     // Default implementation of the draw function from and for particles.js library
     function defaultDraw() {
-      if (pJS.particles.shape.type == "image") {
-        if (pJS.tmp.img_type == "svg") {
+      if (pJS.particles.shape.type === "image") {
+        if (pJS.tmp.img_type === "svg") {
           if (pJS.tmp.count_svg >= pJS.particles.number.value) {
             pJS.fn.particlesDraw();
             if (!pJS.particles.move.enable)
@@ -1363,7 +1370,7 @@ var pJS = function(tag_id, params) {
               pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
           }
         } else {
-          if (pJS.tmp.img_obj != undefined) {
+          if (pJS.tmp.img_obj !== undefined) {
             pJS.fn.particlesDraw();
             if (!pJS.particles.move.enable)
               cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
@@ -1394,12 +1401,12 @@ var pJS = function(tag_id, params) {
   };
   pJS.fn.vendors.checkBeforeDraw = function() {
     // if shape is image
-    if (pJS.particles.shape.type == "image") {
-      if (pJS.tmp.img_type == "svg" && pJS.tmp.source_svg == undefined) {
-        pJS.tmp.checkAnimFrame = requestAnimFrame(check);
+    if (pJS.particles.shape.type === "image") {
+      if (pJS.tmp.img_type === "svg" && pJS.tmp.source_svg === undefined) {
+        pJS.tmp.checkAnimFrame = window.requestAnimFrame();
       } else {
         //console.log('images loaded! cancel check');
-        cancelRequestAnimFrame(pJS.tmp.checkAnimFrame);
+        window.cancelRequestAnimFrame(pJS.tmp.checkAnimFrame);
         if (!pJS.tmp.img_error) {
           pJS.fn.vendors.init();
           pJS.fn.vendors.draw();
