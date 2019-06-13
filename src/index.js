@@ -67,8 +67,8 @@ particlesJS("particles-js", {
 document.getElementById("app").innerHTML = `
 <div class="container primary">
   <h1>What is SNiC</h1>
+  <p>SNiC is an acronym for Stichting Nationaal informatica Congres (Foundation National Computer Science congress). The organisation was established in 2004 with the purpose of stimulating the interest in IT knowledge, IT applications and the business side of IT. Every year, a congress with an IT related subject is organised for academic computer science students from all over the Netherlands. For each congress one study association is chosen to take care of the organisation. This year, the organisation is in the hands of study association Inter-Actief.</p>  
   <button onclick="window.open('https://snic-singular.it/','_blank')" class="previous__snics">Last congress</button>
-  <p>SNiC is an acronym for Stichting Nationaal informatica Congres (Foundation National Computer Science congress). The organisation was established in 2004 with the purpose of stimulating the interest in IT knowledge, IT applications and the business side of IT. Every year, a congress with an IT related subject is organised for academic computer science students from all over the Netherlands. For each congress one study association is chosen to take care of the organisation. This year, the organisation is in the hands of study association Inter-Actief.</p>
 </div>
 <div class="container secondary">
   <h1>Theme</h1>
@@ -82,22 +82,10 @@ document.getElementById("app").innerHTML = `
 </div>
 <div class="container primary">
   <h1>Location</h1>
-  <div class="location">
-    <div>
-      <p>
-      The congress will be held in the Flint in Amersfoort.
-      </p>
-      <br>
-      <a href="https://goo.gl/maps/gdLM6MsJP1CALrXb6" target="_blank">
-        <p>
-          Get directions
-          <i class="fas fa-location-arrow"></i>
-        </p>
-      </a>
-    </div>
-    <div class="location__imagecontainer">
-      <img src="../resources/flint_zaal.jpg"/>
-    </div>
+  <br/>
+  <div class="announcement__box">
+    <i class="fas fa-bullhorn"></i>
+    <p>To be announced</p>
   </div>
 </div>
 <div class="container secondary">
