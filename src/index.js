@@ -70,6 +70,7 @@ document.getElementById("app").innerHTML = `
   <p>SNiC is an acronym for Stichting Nationaal informatica Congres (Foundation National Computer Science congress). The organisation was established in 2004 with the purpose of stimulating the interest in IT knowledge, IT applications and the business side of IT. Every year, a congress with an IT related subject is organised for academic computer science students from all over the Netherlands. For each congress one study association is chosen to take care of the organisation. This year, the organisation is in the hands of study association Inter-Actief.</p>  
   <button onclick="window.open('https://snic-singular.it/','_blank')" class="previous__snics">Last congress</button>
 </div>
+<div class="container__styler pane__variance tertiary"> </div>
 <div class="container secondary">
   <h1>Theme</h1>
   <p>
@@ -80,6 +81,7 @@ document.getElementById("app").innerHTML = `
     With an increase in population size and complex IT systems, the state of our society is becoming increasingly fragile. This has created the important but difficult task of maintaining the environment we have created. The congress will investigate different areas of this problem including disaster management, cyber threat management and in general at Society 4.0. With varying talks, the aim of ResilIT is to inspire visitors to rethink how fragile their position in the world is and how IT can be used to improve the safety of our society.
   </p>
 </div>
+<div class="container__styler tertiary"> </div>
 <div class="container primary">
   <h1>Location</h1>
   <br/>

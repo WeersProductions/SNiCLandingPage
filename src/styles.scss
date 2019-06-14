@@ -1,5 +1,6 @@
 $primary-color: #d64e4e;
 $secondary-color: #00ca33;
+$tertiary-color: #E88483;
 
 body {
   font-family: "Raleway", sans-serif;
@@ -172,21 +173,40 @@ button {
   align-items: center;
   text-align: center;
   padding-top: 2rem;
-  padding-bottom: 4rem;
-  overflow: hidden;
+  padding-bottom: 6rem;
   background: white;
 
   
-  transform: skewY(5deg);
+  transform: skewY(4deg);
   
   > * {
-    transform: skewY(-5deg);
+    transform: skewY(-4deg);
   }
 }
 .primary {
   background: $primary-color;
   color: white;
 }
+.tertiary {
+  background: $tertiary-color;
+  color: white;
+}
+
+.container__styler {
+  position: absolute;
+  left: 30vw;
+  width: 70vw;
+  height: 200px;
+  transform: skewY(-4deg);
+  overflow: visible;
+}
+
+.pane__variance {
+  left: -30vw;
+  transform: skewY(-6deg);
+  width: 130vw;
+}
+
 
 .previous__snics {
   transition: all 0.5s linear;
