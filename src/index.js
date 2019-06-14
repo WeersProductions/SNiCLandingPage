@@ -91,6 +91,7 @@ document.getElementById("app").innerHTML = `
   </div>
 </div>
 <div class="container secondary">
+<div class="container__styler light pane__variance1"> </div>
   <h1>The committee</h1>
   <div class="contact">
     <div class="contact__person">

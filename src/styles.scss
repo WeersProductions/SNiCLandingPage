@@ -1,6 +1,7 @@
 $primary-color: #d64e4e;
 $secondary-color: #00ca33;
 $tertiary-color: #E88483;
+$very-light-color: #efaaa9;
 
 body {
   font-family: "Raleway", sans-serif;
@@ -175,6 +176,7 @@ button {
   padding-top: 2rem;
   padding-bottom: 6rem;
   background: white;
+  overflow: hidden;
 
   
   transform: skewY(4deg);
@@ -192,6 +194,10 @@ button {
   color: white;
 }
 
+.light {
+  background: $very-light-color;
+}
+
 .container__styler {
   position: absolute;
   left: 30vw;
@@ -201,10 +207,23 @@ button {
   overflow: visible;
 }
 
+.pane__helper {
+  overflow: hidden;
+}
+
 .pane__variance {
   left: -30vw;
   transform: skewY(-6deg);
   width: 130vw;
+}
+
+.pane__variance1 {
+  top: -250px;
+  left: -10vw;
+  transform: skewY(-20deg);
+  width: 100vw;
+  height: 400px;
+  z-index: -100;
 }
 
 
