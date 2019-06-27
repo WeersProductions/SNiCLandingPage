@@ -17,6 +17,48 @@
       integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
       crossorigin="anonymous"
     />
+    <script>
+      function openCalendar() {
+        os = getOS();
+        url = "";
+        switch (os) {
+          case "Mac OS":
+          case "iOS":
+            url = "./resources/SNIC.ics";
+            break;
+          case "Windows":
+          case "Android":
+          case "Linux":
+            url =
+              "https://www.google.com/calendar/render?action=TEMPLATE&text=SNiC+presents%3A+ResilIT&dates=20191126T070000Z%2F20191126T190000Z";
+            break;
+        }
+        window.open(url);
+      }
+
+      function getOS() {
+        var userAgent = window.navigator.userAgent,
+          platform = window.navigator.platform,
+          macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
+          windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
+          iosPlatforms = ["iPhone", "iPad", "iPod"],
+          os = null;
+
+        if (macosPlatforms.indexOf(platform) !== -1) {
+          os = "Mac OS";
+        } else if (iosPlatforms.indexOf(platform) !== -1) {
+          os = "iOS";
+        } else if (windowsPlatforms.indexOf(platform) !== -1) {
+          os = "Windows";
+        } else if (/Android/.test(userAgent)) {
+          os = "Android";
+        } else if (!os && /Linux/.test(platform)) {
+          os = "Linux";
+        }
+
+        return os;
+      }
+    </script>
   </head>
 
   <body>
@@ -26,8 +68,10 @@
       <div class="main__area--date">
         <p>26 November 2019</p>
         <div class="dropdown">
-          <img class="dropbtn" src="./resources/calendar.png" />
-          <div id="calendarDropdown" class="dropdown-content">
+          <a onclick="openCalendar()">
+            <img class="dropbtn" src="./resources/calendar.png" />
+          </a>
+          <!-- <div id="calendarDropdown" class="dropdown-content">
             <a
               href="https://www.google.com/calendar/render?action=TEMPLATE&text=SNiC+presents%3A+ResilIT&dates=20191126T070000Z%2F20191126T190000Z"
               target="_blank"
@@ -40,7 +84,7 @@
             <a href="./resources/SNiC.ics">
               <i class="fab fa-apple icon"></i>
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
       <i href="#" id="main_scroll" class="scroll__down" address="true"></i>
@@ -53,7 +97,7 @@
         <ul class="footer__links">
           <li class="footer__link">
             <a
-              href="https://www.facebook.com/StichtingNationaalinformaticaCongres/"
+              href="https://www.instagram.com/nationaalinformaticacongres/"
               target="_blank"
             >
               <i class="fab fa-instagram icon"></i>
@@ -75,7 +119,6 @@
         </ul>
       </nav>
     </footer>
-
     <script src="src/index.js"></script>
     <script src="src/big_svg_logo.js"></script>
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
