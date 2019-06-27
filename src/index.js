@@ -91,6 +91,8 @@ document.getElementById("app").innerHTML = `
   </div>
 </div>
 <div class="container secondary">
+<div class="container__styler pane__variance1 tertiary"></div>
+<div class="front">
   <h1>The committee</h1>
   <div class="contact">
     <div class="contact__person">
@@ -132,6 +134,7 @@ document.getElementById("app").innerHTML = `
       <img class="thumbnail" src="../resources/SanderMeinderts.jpeg"/>
       Sander Meinderts
       <div class="subtitle">Speakers</div>
+    </div>
     </div>
   </div>
 </div>
