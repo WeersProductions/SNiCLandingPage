@@ -10,7 +10,9 @@ body {
 }
 
 h1 {
+  position: relative;
   font-size: 4rem;
+  z-index: 4;
 }
 
 p {
@@ -24,6 +26,10 @@ button {
   font-family: inherit;
   font-weight: bold;
   font-size: 1em;
+}
+
+.front {
+  z-index: 2;
 }
 
 .main__area {
@@ -176,6 +182,7 @@ button {
   padding-top: 2rem;
   padding-bottom: 6rem;
   background: white;
+  overflow-y: hidden;
 
   
   transform: skewY(4deg);
@@ -208,6 +215,13 @@ button {
   width: 130vw;
 }
 
+.pane__variance1 {
+  left: -40vw;
+  transform: skewY(-30deg);
+  width: 90vw;
+  top: -10vw;
+  height: 30vw;
+}
 
 .previous__snics {
   transition: all 0.5s linear;
