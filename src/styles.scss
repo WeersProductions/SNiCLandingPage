@@ -33,7 +33,11 @@ button {
 }
 
 .main__area {
-  height: 100vh;
+  height: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  // height: -webkit-fill-available;
+  // height: -moz-available;
+  // height: stretch;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -69,6 +73,7 @@ button {
     color: $secondary-color;
     background: -webkit-linear-gradient(30deg, $primary-color, $secondary-color);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: default;
   }
@@ -131,8 +136,12 @@ button {
   border-radius: 50%;
   z-index: 2;
   -webkit-animation: bounce 2s infinite 2s;
+  -moz-animation: bounce 2s infinite 2s;
+  -o-animation: bounce 2s infinite 2s;
   animation: bounce 2s infinite 2s;
   -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
   transition: all .2s ease-in;
   cursor: pointer;
 }
@@ -183,6 +192,7 @@ button {
   padding-bottom: 6rem;
   background: white;
   overflow-y: hidden;
+  overflow-x: hidden;
 
   
   transform: skewY(4deg);
@@ -204,7 +214,7 @@ button {
   position: absolute;
   left: 30vw;
   width: 70vw;
-  height: 200px;
+  height: 100vw;
   transform: skewY(-4deg);
   overflow: visible;
 }
@@ -224,7 +234,7 @@ button {
 }
 
 .previous__snics {
-  transition: all 0.5s linear;
+  transition: all 0.25s linear;
   background: $primary-color;
   color: white;
   font-size: 2rem;
@@ -239,7 +249,7 @@ button {
 .previous__snics:hover {
   background: white;
   color: $primary-color;
-  transition: all 0.5s linear;
+  transition: all 0.25s linear;
   font-size: 2.5rem;
 }
 
@@ -283,7 +293,8 @@ button {
 
 .subtitle {
   font-size: 1.5rem;
-  font-weight: regular;
+  font-weight: normal;
+  margin-bottom: 30px;
 }
 
 .thumbnail {
@@ -292,6 +303,8 @@ button {
   margin: auto; 
   border-radius: 2px;
   -webkit-transition: border-radius 0.5s, box-shadow 0.5s, top 0.3s, left 0.3s;
+  -moz-transition: border-radius 0.5s, box-shadow 0.5s, top 0.3s, left 0.3s;
+  -o-transition: border-radius 0.5s, box-shadow 0.5s, top 0.3s, left 0.3s;
   transition: border-radius 0.5s, box-shadow 0.5s, top 0.3s, left 0.3s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
@@ -331,6 +344,8 @@ button {
   color: $primary-color;
   font-size: 3rem;
   -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
   transition: color 0.5s;
 
   &:focus {
@@ -340,6 +355,8 @@ button {
   &:hover {
     color: white;
     -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -o-transition: color 0.5s;
     transition: color 0.5s;
   }
 }

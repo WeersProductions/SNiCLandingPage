@@ -1523,7 +1523,7 @@ function isInArray(value, array) {
 
 window.pJSDom = [];
 
-window.particlesJS = function(tag_id, params) {
+export const particlesJS = function(tag_id, params) {
   //console.log(params);
 
   /* no string id? so it's object params, and set the id with default id */
@@ -1566,7 +1566,7 @@ window.particlesJS = function(tag_id, params) {
   }
 };
 
-window.particlesJS.load = function(tag_id, path_config_json, callback) {
+particlesJS.load = function(tag_id, path_config_json, callback) {
   /* load json config */
   var xhr = new XMLHttpRequest();
   xhr.open("GET", path_config_json);
@@ -1574,7 +1574,7 @@ window.particlesJS.load = function(tag_id, path_config_json, callback) {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
         var params = JSON.parse(data.currentTarget.response);
-        window.particlesJS(tag_id, params);
+        particlesJS(tag_id, params);
         if (callback) callback();
       } else {
         console.log("Error pJS - XMLHttpRequest status: " + xhr.status);
