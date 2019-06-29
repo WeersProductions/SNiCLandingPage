@@ -1,4 +1,4 @@
-import "./styles.scss";
+// import "./styles.scss";
 import { particlesJS } from "./particles.js";
 import { VHChromeFix } from "./mobile-chrome-vh-fix.js";
 
