@@ -34,6 +34,9 @@ button {
 
 .main__area {
   height: 100vh;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: stretch;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -224,7 +227,7 @@ button {
 }
 
 .previous__snics {
-  transition: all 0.5s linear;
+  transition: all 0.25s linear;
   background: $primary-color;
   color: white;
   font-size: 2rem;
@@ -239,7 +242,7 @@ button {
 .previous__snics:hover {
   background: white;
   color: $primary-color;
-  transition: all 0.5s linear;
+  transition: all 0.25s linear;
   font-size: 2.5rem;
 }
 

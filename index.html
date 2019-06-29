@@ -24,7 +24,7 @@
         switch (os) {
           case "Mac OS":
           case "iOS":
-            url = "./resources/SNIC.ics";
+            url = "./resources/SNiC.ics";
             break;
           case "Windows":
           case "Android":
@@ -135,72 +135,73 @@
           <div class="contact">
             <div class="contact__person">
               <img
-                onclick="window.open('https://www.linkedin.com/in/sander-meinderts-295aa1139/','_blank')"
+                onclick="window.open('https://snic-singular.it/','_blank')"
                 class="thumbnail"
-                src="../resources/SanderMeinderts.jpeg"
+                src="../resources/photos/Thijs.jpg"
               />
-              Sander Meinderts
-              <div class="subtitle">Officer of Speakers</div>
+              Thijs van Essen
+              <div class="subtitle">Chairman</div>
             </div>
+            <div class="contact__person">
+              <img
+                onclick="window.open('https://snic-singular.it/','_blank')"
+                class="thumbnail"
+                src="../resources/photos/Jeroen.jpg"
+              />
+              Jeroen Bos
+              <div class="subtitle">Officer of External affairs</div>
+            </div>
+            <div class="contact__person">
+              <img
+                onclick="window.open('https://snic-singular.it/','_blank')"
+                class="thumbnail"
+                src="../resources/photos/Kevin.jpg"
+              />
+              Kevin Witlox
+              <div class="subtitle">Officer of External affairs</div>
+            </div>
+            <div
+              onclick="window.open('https://snic-singular.it/','_blank')"
+              class="contact__person"
+            >
+              <img class="thumbnail" src="../resources/photos/Rik.jpg" />
+              Rik Smale
+              <div class="subtitle">Officer of Logistics</div>
+            </div>
+
             <div class="contact__person">
               <img
                 onclick="window.open('https://www.linkedin.com/in/floris-weers-61392b160/','_blank')"
                 class="thumbnail"
-                src="../resources/SanderMeinderts.jpeg"
+                src="../resources/photos/Floris.jpg"
               />
               Floris Weers
               <div class="subtitle">Secretary and Officer of Promotion</div>
             </div>
-            <div class="contact__person">
-              <img
-                onclick="window.open('https://snic-singular.it/','_blank')"
-                class="thumbnail"
-                src="../resources/SanderMeinderts.jpeg"
-              />
-              Sander Meinderts
-              <div class="subtitle">Promo</div>
+            <div
+              onclick="window.open('https://snic-singular.it/','_blank')"
+              class="contact__person"
+            >
+              <img class="thumbnail" src="../resources/photos/Vincent.jpg" />
+              Vincent Dunning
+              <div class="subtitle">Officer of Speakers</div>
             </div>
             <div class="contact__person">
               <img
-                onclick="window.open('https://snic-singular.it/','_blank')"
+                onclick="window.open('https://www.linkedin.com/in/sander-meinderts-295aa1139/','_blank')"
                 class="thumbnail"
-                src="../resources/SanderMeinderts.jpeg"
+                src="../resources/photos/Sander.jpg"
               />
               Sander Meinderts
-              <div class="subtitle">Speakers</div>
-            </div>
-            <div class="contact__person">
-              <img
-                onclick="window.open('https://snic-singular.it/','_blank')"
-                class="thumbnail"
-                src="../resources/SanderMeinderts.jpeg"
-              />
-              Sander Meinderts
-              <div class="subtitle">Speakers</div>
+              <div class="subtitle">Officer of Speakers</div>
             </div>
             <div
               onclick="window.open('https://snic-singular.it/','_blank')"
               class="contact__person"
             >
-              <img class="thumbnail" src="../resources/SanderMeinderts.jpeg" />
-              Sander Meinderts
-              <div class="subtitle">Speakers</div>
-            </div>
-            <div
-              onclick="window.open('https://snic-singular.it/','_blank')"
-              class="contact__person"
-            >
-              <img class="thumbnail" src="../resources/SanderMeinderts.jpeg" />
-              Sander Meinderts
-              <div class="subtitle">Speakers</div>
-            </div>
-            <div
-              onclick="window.open('https://snic-singular.it/','_blank')"
-              class="contact__person"
-            >
-              <img class="thumbnail" src="../resources/SanderMeinderts.jpeg" />
-              Sander Meinderts
-              <div class="subtitle">Speakers</div>
+              <img class="thumbnail" src="../resources/photos/Martijn.jpg" />
+              Martijn Verkleij
+              <div class="subtitle">Treasurer</div>
             </div>
           </div>
         </div>
@@ -236,6 +237,14 @@
     </footer>
     <script src="src/index.js"></script>
     <script src="src/big_svg_logo.js"></script>
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="src/mobile-chrome-vh-fix.js"></script>
+    <script>
+      var vhFix = new VHChromeFix([
+        {
+          selector: ".main__area",
+          vh: 100
+        }
+      ]);
+    </script>
   </body>
 </html>
