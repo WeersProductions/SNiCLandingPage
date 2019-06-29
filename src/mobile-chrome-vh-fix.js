@@ -3,13 +3,12 @@
  *
  */
 
-export const VHChromeFix = function(selectors) {
+var VHChromeFix = function(selectors) {
   var self = this;
   var userAgent = navigator.userAgent.toLowerCase();
   var isAndroidChrome = /chrome/.test(userAgent) && /android/.test(userAgent);
   var isIOSChrome = /crios/.test(userAgent);
-
-  if (isAndroidChrome || isIOSChrome) {
+  if (isAndroidChrome || isIOSChrome || true) {
     // If we detected Chrome on Android or iOS
     // Cache elements and trigger fix on init
     this.getElements(selectors);
@@ -66,3 +65,17 @@ VHChromeFix.prototype.fixAll = function() {
       (window.innerHeight * element.vh) / 100 + "px";
   }
 };
+
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+window.addEventListener("resize", () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+});
+// var vhFix = new VHChromeFix([
+//   {
+//     selector: ".main__area",
+//     vh: 100
+//   }
+// ]);
