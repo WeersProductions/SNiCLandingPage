@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Stichting Nationaal Informatica Congres</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<style type="text/css">
+
+	html, body {
+		margin: 0;
+		padding: 0;
+		font: 10pt 'Open Sans', Arial, Helvetica, sans-serif;
+		color: #3F3F3F;
+	}
+
+	img {
+		border: none;
+	}
+
+	a {
+		font-weight: bold;
+		color: #444;
+	}
+
+	.binnen {
+		position: absolute;
+		top: 50%;
+		margin: 0 2em;
+
+		-webkit-transform:	translateY(-50%);
+		-moz-transform:		translateY(-50%);
+		-o-transform:		translateY(-50%);
+		-ms-transform:		translateY(-50%);
+		transform:			translateY(-50%);
+	}
+
+	.logo {
+        margin-bottom: 10px;
+		display: block;
+		height: 120px;
+		position: relative;
+	}
+
+	.logo > img {
+		margin: auto 0;
+		max-height: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+	}
+
+	.go-to-congress,
+	.go-to-snic {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 2em;
+	}
+
+	.go-to-congress {
+		left: 0;
+		right: 50%;
+		background: white;
+		text-align: right;
+	}
+
+	.go-to-snic {
+		left: 50%;
+		background: #fff;
+		text-align: left;
+	}
+
+	.go-to-congress p a,
+	.go-to-snic p a {
+		display: inline-block;
+		border: 1px solid white;
+		border-radius: 4px;
+		text-decoration: none;
+		padding: 7px 13px 7px 10px;
+		margin: 15px 0 0 0;
+
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	.go-to-congress p a::after,
+	.go-to-snic p a::after {
+		content: "";
+	}
+	.go-to-congress p a:hover {
+		background-color: white;
+		color: #22244b;
+	}
+
+	.go-to-snic p a { border-color: #444; }
+	.go-to-snic p a:hover {
+		border-color: #333;
+		background-color: #333;
+		color: #fff;
+	}
+
+	.go-to-congress .binnen,
+	.go-to-congress .logo > img {
+		right: 0;
+	}
+
+	.go-to-snic .binnen,
+	.go-to-snic .logo > img {
+		left: 0;
+	}
+
+	.resilit .snic {
+		float: left;
+	}
+	.resilit {
+		background: #333;
+		color: white;
+	}
+
+	.resilit a {
+		color: white;
+	}
+
+	.chevron::before {
+		border-style: solid;
+		border-width: 0.25em 0.25em 0 0;
+		content: '';
+		display: inline-block;
+		height: 0.45em;
+		left: 0.15em;
+		position: relative;
+		top: 0.35em;
+		transform: rotate(-45deg);
+		vertical-align: top;
+		width: 0.45em;
+	}
+
+	.chevron.right:before {
+		left: 0;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+    
+
+    .go-to-snic .logo img {
+        max-width: 220px;
+        margin: auto 0 0 0;
+    }
+
+	@media screen and (max-width: 768px){
+		html, body {
+			font-size: 8pt;
+		}
+
+		.logo > img {
+			max-height: 100px;
+		}
+
+		.go-to-congress, .go-to-snic {
+			left: 0;
+			right: 0;
+			position: absolute;
+		}
+
+		.go-to-congress {
+			top: 0;
+			bottom: 50%;
+		}
+
+		.go-to-snic {
+			top: 50%;
+			bottom: 0;
+		}
+
+		.binnen {
+			width: 100%;
+			margin: 0;
+			top: 50% !important;
+			left: 50% !important;
+			text-align: center;
+
+			-webkit-transform:	translate(-50%, -50%);
+			-moz-transform:		translate(-50%, -50%);
+			-o-transform:		translate(-50%, -50%);
+			-ms-transform:		translate(-50%, -50%);
+			transform:			translate(-50%, -50%);
+		}
+
+		.go-to-congress .logo > img {
+			right: 50%;
+			-webkit-transform:	translateX(50%);
+			-moz-transform:		translateX(50%);
+			-o-transform:		translateX(50%);
+			-ms-transform:		translateX(50%);
+			transform:			translateX(50%);
+		}
+
+		.go-to-snic .logo > img {
+			left: 50%;
+			-webkit-transform:	translateX(-50%);
+			-moz-transform:		translateX(-50%);
+			-o-transform:		translateX(-50%);
+			-ms-transform:		translateX(-50%);
+			transform:			translateX(-50%);
+		}
+	}
+
+	</style>
+<style type="text/css"></style></head>
+
+<body>
+	<div class="resilit go-to-congress">
+		<div class="binnen">
+			<a class="logo" href="https://resilit.snic.nl/">
+                                <img src="https://resilit.snic.nl/resources/resilit_logo.svg" alt="Logo ResilIT">
+                        </a>
+			<p>Het volgende symposium zal plaatsvinden op 28 november 2019.</p>
+			<p><a href="https://resilit.snic.nl/">Naar de site van ResilIT <span class="chevron right"></span></a></p>
+		</div>
+	</div>
+	<div class="snic go-to-snic">
+		<div class="binnen">
+			<a class="logo" href="https://stichting.snic.nl/index.php"><img src="Logos/snic_logo.svg" alt="Logo SNiC"></a>
+			<p>Of wil je meer over SNiC zelf weten?</p>
+			<p><a href="https://stichting.snic.nl/index.php">Naar de stichting <span class="chevron right"></span></a></p>
+		</div>
+	</div>
+
+
+
+</body></html>

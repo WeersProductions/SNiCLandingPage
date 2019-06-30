@@ -1,6 +1,5 @@
 // import "./styles.scss";
 import { particlesJS } from "./particles.js";
-import { VHChromeFix } from "./mobile-chrome-vh-fix.js";
 
 particlesJS("particles-js", {
   fps_limit: 30,
