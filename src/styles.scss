@@ -277,11 +277,10 @@ button {
 .contact__person {
   padding: 5px;
   padding-bottom: 10px;
-  margin-top: 10px;
   color: black;
   font-weight: bold;
   font-size: 3rem;
-  margin: auto;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
   flex-basis: 25vw;
@@ -300,7 +299,7 @@ button {
 .thumbnail {
   width: 500px;
   height: auto;
-  margin: auto; 
+  margin: 0px auto; 
   border-radius: 2px;
   -webkit-transition: border-radius 0.5s, box-shadow 0.5s, top 0.3s, left 0.3s;
   -moz-transition: border-radius 0.5s, box-shadow 0.5s, top 0.3s, left 0.3s;
